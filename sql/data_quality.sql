@@ -1,5 +1,7 @@
 -- ==============================================================================
 -- COVID-19 Data Quality and Integrity Auditing Queries
+-- Author & Lead Data Engineer: Himanshu Bagde (@Himanshubagde11)
+-- Dataset Curator: Himanshu Bagde | Source: Our World in Data / WHO
 -- ==============================================================================
 
 -- 1. Check for Duplicate Country-Date Records

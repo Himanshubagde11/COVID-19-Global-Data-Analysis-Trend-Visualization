@@ -1,5 +1,7 @@
 -- ==============================================================================
 -- Global Aggregation and Longitudinal Trend Analysis
+-- Author & Lead Data Engineer: Himanshu Bagde (@Himanshubagde11)
+-- Dataset Curator: Himanshu Bagde | Source: Our World in Data / WHO
 -- ==============================================================================
 
 -- 1. Global Daily Cases Trend

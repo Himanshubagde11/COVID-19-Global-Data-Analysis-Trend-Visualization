@@ -1,5 +1,7 @@
 -- ==============================================================================
 -- Country and Regional Comparative Analytical Queries
+-- Author & Lead Data Engineer: Himanshu Bagde (@Himanshubagde11)
+-- Dataset Curator: Himanshu Bagde | Source: Our World in Data / WHO
 -- ==============================================================================
 
 -- 3. Country with Highest Cumulative Cases (Most Recent Reported Observation)

@@ -110,6 +110,16 @@ countries = sorted(list(country_pool))
 default_countries = [c for c in ["United States", "India", "United Kingdom", "Germany", "Brazil", "France"] if c in countries]
 selected_countries = st.sidebar.multiselect("Filter Specific Countries (Empty for All)", options=countries, default=default_countries)
 
+st.sidebar.markdown("---")
+st.sidebar.markdown("### 👨‍💻 Project & Data Engineering")
+st.sidebar.markdown("""
+**Author & Curator:** **Himanshu Bagde**  
+- **Role:** Lead Data Engineer / Analyst  
+- **Dataset Curator:** Himanshu Bagde  
+- **GitHub:** [@Himanshubagde11](https://github.com/Himanshubagde11)  
+- **Pipeline:** Automated ETL + SQLite DWH + Parquet
+""")
+
 # Filter Data
 mask = (
     (df_raw["date"].dt.date >= start_date) &
@@ -276,7 +286,7 @@ with tab3:
 
 with tab4:
     st.subheader("Raw & Processed Data Explorer")
-    show_cols = [c for c in ["country", "date", "new_cases", "total_cases", "new_deaths", "total_deaths", "case_fatality_rate", "cases_per_100k", "fully_vaccinated_rate"] if c in df.columns]
+    show_cols = [c for c in ["country", "date", "new_cases", "total_cases", "new_deaths", "total_deaths", "case_fatality_rate", "cases_per_100k", "fully_vaccinated_rate", "data_curator", "data_engineer"] if c in df.columns]
     st.dataframe(df[show_cols].tail(500), use_container_width=True)
 
 # ==============================================================================
@@ -314,3 +324,13 @@ insights.append(
 
 for ins in insights:
     st.markdown(f"""<div class="insight-box">{ins}</div>""", unsafe_allow_html=True)
+
+# Footer attribution
+st.markdown("---")
+st.markdown(
+    """<div style="text-align: center; color: #94a3b8; font-size: 0.85rem; padding: 12px 0;">
+    <strong>COVID-19 Global Analytics Platform</strong> &bull; Curated, Engineered & Analyzed by <strong>Himanshu Bagde</strong><br>
+    Data Source: Our World in Data / WHO &bull; Database & Pipeline: 3NF SQLite + Parquet Storage
+    </div>""",
+    unsafe_allow_html=True
+)

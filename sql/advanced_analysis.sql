@@ -1,5 +1,7 @@
 -- ==============================================================================
 -- Advanced SQL Analytics: CTEs, Window Functions, Growth Rates & Wave Analysis
+-- Author & Lead Data Engineer: Himanshu Bagde (@Himanshubagde11)
+-- Dataset Curator: Himanshu Bagde | Source: Our World in Data / WHO
 -- ==============================================================================
 
 -- 15. Month-over-Month (MoM) Global Case & Death Growth Rate

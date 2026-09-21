@@ -69,7 +69,11 @@ def generate_all_notebooks(notebooks_dir: str = "notebooks"):
         md_cell("""# COVID-19 Global Data Analysis: Data Exploration
 ## Part 1: Dataset Overview, Schema Discovery, and Data Profiling
 
-This notebook performs initial exploratory profiling on the raw COVID-19 global dataset (sourced from Our World in Data / WHO).
+**Lead Data Engineer & Curator:** **Himanshu Bagde** ([GitHub: @Himanshubagde11](https://github.com/Himanshubagde11))  
+**Primary Surveillance Source:** Our World in Data / WHO / Johns Hopkins CSSE  
+**Project:** COVID-19 Global Data Analysis & Trend Visualization
+
+This notebook performs initial exploratory profiling on the raw COVID-19 global dataset.
 
 ### Objectives:
 1. Load the raw dataset and inspect dimensional shape.
@@ -138,6 +142,10 @@ print(f"Temporal Window: {min_date} to {max_date}")
         md_cell("""# COVID-19 Global Data Analysis: Data Cleaning & Hygiene
 ## Part 2: Standardization, Missing Value Handling & Quality Validation
 
+**Lead Data Engineer & Curator:** **Himanshu Bagde** ([GitHub: @Himanshubagde11](https://github.com/Himanshubagde11))  
+**Primary Surveillance Source:** Our World in Data / WHO / Johns Hopkins CSSE  
+**Project:** COVID-19 Global Data Analysis & Trend Visualization
+
 This notebook documents the systematic data cleaning pipeline applied to the COVID-19 dataset.
 
 ### Cleaning Decisions Documented:
@@ -197,6 +205,10 @@ for c in dq_report['checks']:
         md_cell("""# COVID-19 Global Data Analysis: Exploratory Data Analysis (EDA)
 ## Part 3: Distributions, Regional Disparities, and Global Burden Rankings
 
+**Lead Data Engineer & Curator:** **Himanshu Bagde** ([GitHub: @Himanshubagde11](https://github.com/Himanshubagde11))  
+**Primary Surveillance Source:** Our World in Data / WHO / Johns Hopkins CSSE  
+**Project:** COVID-19 Global Data Analysis & Trend Visualization
+
 In this notebook, we perform deep exploratory data analysis on the validated, transformed dataset.
 """),
         code_cell("""import sys
@@ -255,6 +267,10 @@ plt.show()
     nb4_cells = [
         md_cell("""# COVID-19 Global Data Analysis: Time-Series Analysis
 ## Part 4: Multi-Window Rolling Averages, Wave Identification, and Growth Dynamics
+
+**Lead Data Engineer & Curator:** **Himanshu Bagde** ([GitHub: @Himanshubagde11](https://github.com/Himanshubagde11))  
+**Primary Surveillance Source:** Our World in Data / WHO / Johns Hopkins CSSE  
+**Project:** COVID-19 Global Data Analysis & Trend Visualization
 
 This notebook examines the longitudinal time-series properties of the pandemic:
 - 7-day, 14-day, and 30-day smoothing to filter weekend reporting lags.
@@ -317,6 +333,10 @@ plt.show()
         md_cell("""# COVID-19 Global Data Analysis: Vaccination Dynamics
 ## Part 5: Rollout Velocity, Global Coverage & Mortality Decoupling
 
+**Lead Data Engineer & Curator:** **Himanshu Bagde** ([GitHub: @Himanshubagde11](https://github.com/Himanshubagde11))  
+**Primary Surveillance Source:** Our World in Data / WHO / Johns Hopkins CSSE  
+**Project:** COVID-19 Global Data Analysis & Trend Visualization
+
 This notebook evaluates:
 1. Cumulative global vaccination trajectory across doses.
 2. Cross-country inequality in immunization coverage.
@@ -375,6 +395,10 @@ plt.show()
     nb6_cells = [
         md_cell("""# COVID-19 Global Data Analysis: Final Insights & Synthesis
 ## Part 6: Executive Synthesis, Limitations, and Strategic Takeaways
+
+**Lead Data Engineer & Curator:** **Himanshu Bagde** ([GitHub: @Himanshubagde11](https://github.com/Himanshubagde11))  
+**Primary Surveillance Source:** Our World in Data / WHO / Johns Hopkins CSSE  
+**Project:** COVID-19 Global Data Analysis & Trend Visualization
 
 This concluding notebook synthesizes findings from SQL queries, statistical models, and time-series analyses.
 

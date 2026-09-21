@@ -1,5 +1,7 @@
 -- ==============================================================================
 -- COVID-19 Vaccination Progress & Epidemiological Interaction Queries
+-- Author & Lead Data Engineer: Himanshu Bagde (@Himanshubagde11)
+-- Dataset Curator: Himanshu Bagde | Source: Our World in Data / WHO
 -- ==============================================================================
 
 -- 10. Global and National Vaccination Coverage Status
