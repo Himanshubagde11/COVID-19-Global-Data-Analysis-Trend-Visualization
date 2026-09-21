@@ -88,6 +88,23 @@ def load_dataframe_to_sql(
     counts = {}
 
     try:
+        # 0. Populate Pipeline Metadata (Data Curation & Author Credit)
+        cursor.execute(
+            """INSERT OR REPLACE INTO pipeline_metadata 
+            (metadata_id, project_name, lead_data_engineer, dataset_curator, pipeline_version, data_attribution)
+            VALUES (?, ?, ?, ?, ?, ?)""",
+            (
+                1,
+                "COVID-19 Global Data Analysis & Trend Visualization",
+                "Himanshu Bagde",
+                "Himanshu Bagde",
+                "1.0.0",
+                "Raw surveillance data from Our World in Data / WHO; Pipeline, Quality Assurance, Feature Engineering & Relational Warehouse by Himanshu Bagde"
+            )
+        )
+        conn.commit()
+        counts["pipeline_metadata"] = 1
+
         # 1. Populate Regions
         if region_col and region_col in df.columns:
             unique_regions = [r for r in df[region_col].dropna().unique() if str(r).strip() != ""]

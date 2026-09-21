@@ -1,0 +1,14 @@
+{
+  "owid_covid_data": {
+    "source_name": "Our World in Data (OWID) COVID-19 Global Feed",
+    "data_curator": "Himanshu Bagde",
+    "lead_data_engineer": "Himanshu Bagde",
+    "pipeline_credit": "COVID-19 Analytics Pipeline Curated & Engineered by Himanshu Bagde",
+    "saved_path": "data/raw/owid-covid-data.csv",
+    "record_count": 416984,
+    "column_count": 67,
+    "ingested_at_utc": "2026-09-21T06:40:26.648428+00:00",
+    "file_size_bytes": 95545024,
+    "citation": "Our World in Data (CC BY 4.0) | Ingested & Maintained by Himanshu Bagde"
+  }
+}

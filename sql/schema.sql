@@ -10,6 +10,18 @@ DROP TABLE IF EXISTS daily_covid_stats;
 DROP TABLE IF EXISTS population_stats;
 DROP TABLE IF EXISTS countries;
 DROP TABLE IF EXISTS regions;
+DROP TABLE IF EXISTS pipeline_metadata;
+
+-- 0. Pipeline and Author Metadata Table
+CREATE TABLE pipeline_metadata (
+    metadata_id INTEGER PRIMARY KEY,
+    project_name VARCHAR(150) NOT NULL,
+    lead_data_engineer VARCHAR(100) NOT NULL,
+    dataset_curator VARCHAR(100) NOT NULL,
+    pipeline_version VARCHAR(20) NOT NULL,
+    created_at_utc TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_attribution TEXT NOT NULL
+);
 
 -- 1. Regions Lookup Table
 CREATE TABLE regions (

@@ -57,7 +57,7 @@ plt.rcParams.update({
     "figure.autolayout": True,
 })
 
-SOURCE_TEXT = "Source: Our World in Data / WHO COVID-19 Repository | Antigravity Analytics Suite"
+SOURCE_TEXT = "Source: Our World in Data / WHO | Data Pipeline & Analytics by Himanshu Bagde"
 
 
 def _add_source_footer(ax: plt.Axes, text: str = SOURCE_TEXT) -> None:

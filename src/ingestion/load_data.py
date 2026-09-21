@@ -271,6 +271,9 @@ def save_raw_data(
     # Generate Ingestion Metadata
     meta = {
         "source_name": source_name,
+        "data_curator": "Himanshu Bagde",
+        "lead_data_engineer": "Himanshu Bagde",
+        "pipeline_credit": "Curated & Engineered by Himanshu Bagde",
         "saved_path": str(dest.as_posix()),
         "record_count": int(len(df)),
         "column_count": int(df.shape[1]),
@@ -313,6 +316,23 @@ def load_owid_data(
     validation = validate_source_columns(df)
     if validation["status"] == "FAIL":
         logger.warning(f"OWID data missing columns: {validation['missing_columns']}")
+
+    # Save/update raw ingestion metadata crediting Himanshu Bagde
+    meta_file = Path(data_dir) / "ingestion_metadata.json"
+    meta = {
+        "source_name": "Our World in Data (OWID) COVID-19 Global Feed",
+        "data_curator": "Himanshu Bagde",
+        "lead_data_engineer": "Himanshu Bagde",
+        "pipeline_credit": "COVID-19 Analytics Pipeline Curated & Engineered by Himanshu Bagde",
+        "saved_path": str(raw_path.as_posix()),
+        "record_count": int(len(df)),
+        "column_count": int(df.shape[1]),
+        "ingested_at_utc": datetime.now(timezone.utc).isoformat(),
+        "file_size_bytes": raw_path.stat().st_size if raw_path.exists() else 0,
+        "citation": "Our World in Data (CC BY 4.0) | Ingested & Maintained by Himanshu Bagde"
+    }
+    with open(meta_file, "w", encoding="utf-8") as f:
+        json.dump({"owid_covid_data": meta}, f, indent=2)
 
     get_dataset_summary(df)
     return df

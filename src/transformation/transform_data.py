@@ -212,7 +212,11 @@ def transform_covid_data(
     # 5. Growth Rates
     df = calculate_growth_rates(df, group_col=country_col, date_col="date", metric_col="7_day_cases_avg")
 
-    # 6. Save Processed Artifacts
+    # 6. Embedded Data Attribution
+    df["data_curator"] = "Himanshu Bagde"
+    df["data_engineer"] = "Himanshu Bagde"
+
+    # 7. Save Processed Artifacts
     if output_dir:
         out_dir = Path(output_dir)
         out_dir.mkdir(parents=True, exist_ok=True)

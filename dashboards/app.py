@@ -125,7 +125,7 @@ df = df_raw[mask].copy()
 # Header and KPIs
 # ==============================================================================
 st.title("🦠 COVID-19 Global Analytics Dashboard")
-st.markdown(f"Tracking pandemic progression, vaccination campaigns, and epidemiological impact across **{df['country'].nunique():,}** countries.")
+st.markdown(f"Tracking pandemic progression, vaccination campaigns, and epidemiological impact across **{df['country'].nunique():,}** countries &bull; **Data Curated & Engineered by Himanshu Bagde**")
 
 # Calculate KPIs
 latest_by_country = df.sort_values("date").groupby("country", observed=True).last().reset_index()

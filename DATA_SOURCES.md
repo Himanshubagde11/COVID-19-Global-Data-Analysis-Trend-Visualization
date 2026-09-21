@@ -37,3 +37,12 @@ This project utilizes real-world open epidemiological and demographic data publi
 1. **Immutable Raw Storage:** Raw data ingested from upstream sources is preserved verbatim without modification in `data/raw/`.
 2. **Deterministic Processing:** All transformations, country normalizations, and rolling averages are programmatically computed via `src/` modules with verifiable audit trails.
 3. **No Fabrication:** All numerical outputs, summary tables, and visualizations represent verifiable mathematical calculations derived directly from the underlying datasets.
+
+---
+
+## 3. Data Engineering, Curation & Pipeline Credit
+
+- **Lead Data Engineer & Data Curator:** **Himanshu Bagde**
+- **Pipeline Role:** Complete design and implementation of automated data ingestion, cleaning rules, country normalization, entity mapping, 8-gate automated quality validation, feature engineering (CFR, population adjustments, multi-window rolling averages), relational warehousing, and analytics visualization.
+- **Embedded Attribution:** All processed data files (`data/processed/covid_processed.parquet`, `covid_processed.csv`, `data/sample/sample_covid_data.csv`), ingestion metadata (`data/raw/ingestion_metadata.json`), and database audit tables (`pipeline_metadata` in `data/covid_analytics.db`) explicitly record and preserve **Himanshu Bagde** as the Lead Data Engineer and Dataset Curator.
+
