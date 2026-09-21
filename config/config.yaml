@@ -1,0 +1,72 @@
+# ==============================================================================
+# COVID-19 Global Data Analysis & Trend Visualization - Configuration
+# ==============================================================================
+
+project:
+  name: "COVID-19 Global Data Analysis & Trend Visualization"
+  version: "1.0.0"
+  description: "Production-grade COVID-19 global analytics pipeline and visualization system"
+  author: "Himanshu Bagde"
+  license: "MIT"
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  sample_data_dir: "data/sample"
+  sql_dir: "sql"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+  logs_dir: "logs"
+  log_file: "logs/pipeline.log"
+  database_path: "data/covid_analytics.db"
+
+data_sources:
+  owid:
+    url: "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
+    raw_filename: "owid-covid-data.csv"
+    description: "Our World in Data global COVID-19 dataset"
+  jhu_us_confirmed:
+    url: "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv"
+    raw_filename: "time_series_covid19_confirmed_US.csv"
+    description: "Johns Hopkins University US county-level confirmed cases time series"
+  jhu_us_deaths:
+    url: "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
+    raw_filename: "time_series_covid19_deaths_US.csv"
+    description: "Johns Hopkins University US county-level deaths time series"
+
+pipeline:
+  chunk_size: 50000
+  download_timeout: 30
+  retry_attempts: 3
+  date_start: "2020-01-01"
+  date_end: "2024-12-31"
+  rolling_windows:
+    short: 7
+    medium: 14
+    long: 30
+
+validation:
+  thresholds:
+    max_missing_country_pct: 0.0
+    max_missing_date_pct: 0.0
+    max_missing_cases_pct: 30.0
+    max_negative_cases_allowed: 0
+    duplicate_country_date_allowed: 0
+    min_country_count: 150
+
+database:
+  dialect: "sqlite" # sqlite or postgresql
+  sqlite_path: "data/covid_analytics.db"
+  batch_size: 10000
+
+target_countries:
+  - "United States"
+  - "India"
+  - "United Kingdom"
+  - "Germany"
+  - "Brazil"
+  - "Italy"
+  - "France"
+  - "Japan"
+  - "Canada"
+  - "Australia"

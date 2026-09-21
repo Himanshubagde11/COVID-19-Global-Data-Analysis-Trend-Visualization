@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+ENV/
+
+# Environment Variables & Credentials
+.env
+.env.local
+*.secret
+credentials.json
+
+# Raw Large Datasets (tracked via download scripts / DVC / sample extracts)
+data/raw/*.csv
+data/raw/*.csv.gz
+data/processed/*.parquet
+data/processed/*.csv
+!data/sample/*.csv
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/*.log
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Test & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
